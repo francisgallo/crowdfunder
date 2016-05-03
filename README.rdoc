@@ -1,5 +1,42 @@
 == README
 
+Day 1:
+• Projects/new.html.erb (Francis)
+• Reward/new.html.erb   (Ariane)
+• Projects/index.html.erb (Francis)
+• Projects/show.html.erb (Kim/Francis) 
+• Seed 9 Categories (Ariane)
+• Category/show.html.erb (Ariane/Francis) 
+• User/new.html.erb        (Callum)
+• User/show.html.erb
+  ○ Seed 2 Users (don’t forget password  Blue123)
+• Sessions/new.html.erb   (Kim)
+  ○ Login logic (refer to rainforest)
+• Seed 2 Projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
