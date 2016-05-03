@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :rewards, only: [:index, :show, :new, :create]
+    resources :pledges, only: [:index, :create]
   end
 
   resources :users, only: [:show, :new, :create, :edit]
