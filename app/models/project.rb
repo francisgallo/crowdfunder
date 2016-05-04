@@ -4,4 +4,5 @@ class Project < ActiveRecord::Base
   has_many :rewards
   belongs_to :category
 
+  accepts_nested_attributes_for :rewards,  reject_if:  :all_blank 
 end
