@@ -44,7 +44,7 @@
 
     <h2>Rewards</h2>
 
-<%= f.fields_for :rewards,  [Reward.new, Reward.new, Reward.new] do |reward_fields| %>
+<%= f.fields_for :rewards,  [Reward.new, Reward.new, Reward.new, Reward.new ] do |reward_fields| %>
       <div class="field">
         <%= reward_fields.label :amount %>
         <%= reward_fields.select :amount,[['25' ,25],['50',50],['75',75],['100',100]] %>
