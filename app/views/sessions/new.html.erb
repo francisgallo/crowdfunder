@@ -1,24 +1,19 @@
 <h1>Log In</h1>
 
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, :method => :post do %>
 
-  <div>
+  <div class="field">
     <%= label_tag :email %> <br />
     <%= text_field_tag :email %>
   </div>
 
-  <div>
+  <div class="field">
      <%= label_tag :password %><br />
      <%= password_field_tag :password %>
   </div>
 
-  <div>
-     <%= label_tag :password_confirmation %><br />
-     <%= password_field_tag :password_confirmation %>
-  </div>
-
-  <div>
-    <%= submit_tag "Log In" %>
+  <div class="field">
+    <%= submit_tag "Login" %>
   </div>
 
 <% end %>

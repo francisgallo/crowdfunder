@@ -1,17 +1,17 @@
 <h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+
 
 <%= @projects.each do |project| %>
 
 <p>
-<a href="project/<%=project.id%>"< img src="http://placekitten.com/350/350">
-</p>
-<p>
+<a href="<%=project.id%>">
   <%=project.title %>, <%= project.goal%>, <%= project.start_date %>
+</a>
+
 </p>
 
 <p>
   <%= project.description %>
 </p>
+
 <% end %>
-<p>im a template look at me</p>
