@@ -6,35 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-
-create_table "projects", force: :cascade do |t|
-  t.string   "title"
-  t.string   "description"
-  t.integer  "goal"
-  t.datetime "start_date"
-  t.datetime "end_date"
-  t.string   "location"
-  t.integer  "user_id"
-  t.integer  "category_id"
-  t.datetime "created_at",  null: false
-  t.datetime "updated_at",  null: false
-  t.string   "image"
-end
-
-
+User.destroy_all
+Category.destroy_all
+Project.destroy_all
 
 Project.create(
   title: "Corduroy",
   description: "Door-to-door laundry and dry cleaning service. Find a dry cleaner in your area and we'll take care of all the rest. Just schedule a pick-up",
   goal: 20000,
-  start_date: 2016-02-06T00:00:00+00:00
-  end_date: 2016-06-06T00:00:00+00:00
+  start_date: 2016-02-06T00:00:00+00:00,
+  end_date: 2016-06-06T00:00:00+00:00,
   location: "Toronto",
-  user_id:
-  category_id:
+  user_id: 1,
+  category_id: 9,
   image: "http://previews.123rf.com/images/pitris/pitris1302/pitris130200002/17816335-Illustration-of-clothes-drying-outdoor--Stock-Vector-clothes-laundry-hanging.jpg"
 )
+
 Project.create(
   title: "Sensory Dessert",
   description: "Full satisfaction without the calories. Allow our product to create the percieved satisfaction of eating a dessert through currated sense combinations designed to make you feel satisfied.",
@@ -42,7 +29,51 @@ Project.create(
   start_date: 2016-03-01T00:00:00+00:00,
   end_date: 2016-07-01T00:00:00+00:00,
   location: "Toronto",
-  user_id: 
-  category_id:
-  image: "http://previews.123rf.com/images/pitris/pitris1302/pitris130200002/17816335-Illustration-of-clothes-drying-outdoor--Stock-Vector-clothes-laundry-hanging.jpg"
+  user_id: 2,
+  category_id: 9,
+  image: "https://s-media-cache-ak0.pinimg.com/736x/1a/2d/ce/1a2dce5ba34349558f00a792e0dcce99.jpg"
+  ) 
+
+
+#1
+User.create(name: 'John Smith', email: 'john@gmail.com', password: 'Blue123', password_confirmation: 'Blue123')
+#2
+User.create(name: 'Kate Jones', email: 'kate@gmail.com', password: 'Blue123', password_confirmation: 'Blue123')
+
+#1
+Category.create!(
+  :name => 'art'
+)
+#2
+Category.create!(
+  :name => 'crafts'
+)
+#3
+Category.create!(
+  :name => 'design'
+)
+#4
+Category.create!(
+  :name => 'fashion'
+)
+#5
+Category.create!(
+  :name => 'food'
+)
+#6
+Category.create!(
+  :name => 'games'
+)
+#7
+Category.create!(
+  :name => 'music'
+)
+#8
+Category.create!(
+  :name => 'photography'
+)
+#9
+Category.create!(
+  :name => 'technology'
+>>>>>>> 015982c38982b05158894c847aaf8b356054a741
 )
