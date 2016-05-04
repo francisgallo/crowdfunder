@@ -1,5 +1,16 @@
 == README
 
+Day 2:
+• Login associated with creating a project
+• Fix categories views
+• Fix index page hash
+
+• Add pledges
+  ○ Associate reward & projects  
+
+Start Ajax to display rewards  (Monday's lecture) 
+
+
 Day 1:
 • Projects/new.html.erb (Francis)
 • Reward/new.html.erb   (Ariane)
