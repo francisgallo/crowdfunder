@@ -44,39 +44,17 @@
 
     <h2>Rewards</h2>
 
-<%= f.fields_for :rewards, [Reward.new] do |reward_fields| %>
+<%= f.fields_for :rewards,  [Reward.new, Reward.new, Reward.new] do |reward_fields| %>
       <div class="field">
         <%= reward_fields.label :amount %>
-        <%= reward_fields.select :amount,[['25' ,25]] %>
+        <%= reward_fields.select :amount,[['25' ,25],['50',50],['75',75],['100',100]] %>
       </div>
 
       <div class="field">
         <%= reward_fields.label :description %>
         <%= reward_fields.text_area :description %>
       </div>
-
-      <div class="field">
-        <%= reward_fields.label :amount %>
-        <%= reward_fields.select :amount, [['50' ,50]]%>
-      </div>
-
-      <div class="field">
-        <%= reward_fields.label :description %>
-        <%= reward_fields.text_area :description %>
-      </div>
-
-      <div class="field">
-        <%= reward_fields.label :amount %>
-        <%= reward_fields.select :amount, [['75' ,75]]%>
-      </div>
-
-      <div class="field">
-        <%= reward_fields.label :description %>
-        <%= reward_fields.text_area :description %>
-      </div>
-
-    <% end %>
-
+      <% end %>
     <div class="field">
       <%= f.submit %>
     </div>
