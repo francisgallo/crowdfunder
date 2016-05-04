@@ -9,6 +9,7 @@
 User.destroy_all
 Category.destroy_all
 Project.destroy_all
+
 #1
 Project.create!(
   :title => "Corduroy",
@@ -34,11 +35,11 @@ Project.create!(
   :image => "https://s-media-cache-ak0.pinimg.com/736x/1a/2d/ce/1a2dce5ba34349558f00a792e0dcce99.jpg"
   )
 
-
 #1
 User.create!(name: 'John Smith', email: 'john@gmail.com', password_digest: 'Blue123')
 #2
 User.create!(name: 'Kate Jones', email: 'kate@gmail.com', password_digest: 'Blue123')
+=======
 
 #1
 Category.create!(
