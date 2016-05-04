@@ -37,9 +37,9 @@ Project.create!(
 
 
 #1
-User.create!(name: 'John Smith', email: 'john@gmail.com', password_digest: BCrypt::Password.create("Blue123"))
+User.create!(name: 'John Smith', email: 'john@gmail.com', password: 'test', password_confirmation: 'test' )
 #2
-User.create!(name: 'Kate Jones', email: 'kate@gmail.com', password_digest: BCrypt::Password.create("Blue123"))
+User.create!(name: 'Kate Jones', email: 'kate@gmail.com', password: 'test', password_confirmation: 'test' )
 
 
 #1
