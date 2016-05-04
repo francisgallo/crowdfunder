@@ -1,7 +1,87 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
 
+<h1>New Project</h1>
 
+<%= form_for @project do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
 
+  <div class ="field">
+    <%=f.label :categories %>
+    <%=f.select :category_id, [['Arts' ,1], ['Crafts',2  ], ['Design',3],['Fashion',4], ['Food',5 ], ['Games',6], ['Music',7], ['photography',8], ['technology',9]]  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class = "field">
+    <%= f.label :goal %>
+    <%= f.number_field :goal %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :start_date %>
+    <%= f.datetime_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_date %>
+    <%= f.datetime_field :end_date %>
+  </div>
+
+  <div class= "field" >
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class = "field" >
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  h1>New Project</h1>
+
+  <%= form_for @project do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :end_time %>
+      <%= f.datetime_field :end_date %>
+    </div>
+
+    <h2>Rewards</h2>
+
+    <%= f.fields_for :rewards, [Reward.new, Reward.new, Reward.new] do |reward_fields| %>
+      <div class="field">
+        <%= reward_fields.label :amount %>
+        <%= reward_fields.text_field :amount %>
+      </div>
+
+      <div class="field">
+        <%= reward_fields.label :description %>
+        <%= reward_fields.text_area :description %>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+   <div class="field">
+     <%= f.submit %>
+   </div>
+ <% end %>
 <!-- form for a new project  -->
 <!-- f.submit, redirect_to rewards/new.html.erb -->
