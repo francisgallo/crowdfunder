@@ -6,6 +6,7 @@ class PledgesController < ApplicationController
   def create
     puts params
     @project = Project.find(params[:project_id])
+    @pledge_user= current_user
 
     @pledge = @project.pledges.build(pledge_params)
 
