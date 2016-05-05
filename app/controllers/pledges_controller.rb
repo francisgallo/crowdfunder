@@ -7,7 +7,6 @@ class PledgesController < ApplicationController
     puts params
     @project = Project.find(params[:project_id])
     @pledge_user= current_user
-
     @pledge = @project.pledges.build(pledge_params)
 
     #we want the instance of the project's id to be set on the pledge

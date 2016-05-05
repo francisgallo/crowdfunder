@@ -14,30 +14,32 @@
      <br>
        <%= reward.description %>
      </p>
-   <% end %>
-
-  <% if current_user %>
-
-    <%= form_for [@project, @pledge] do |f| %>
-
-      <%= f.radio_button(:amount, 25) %>
-      <%= f.label(:amount, '25') %>
-      <%=f.hidden_field :user_id, :value => current_user.id%>
-
-      <%= f.radio_button(:amount, 50) %>
-      <%= f.label(:amount, '50') %>
-      <%=f.hidden_field :user_id, :value => current_user.id%>
-
-      <%= f.radio_button(:amount, 75) %>
-      <%= f.label(:amount, '75') %>
-      <%=f.hidden_field :user_id, :value => current_user.id%>
-
-      <%= f.radio_button(:amount, 100) %>
-      <%= f.label(:amount, '100') %>
-      <%=f.hidden_field :user_id, :value => current_user.id%>
-
-      <%= f.submit %>
 
     <% end %>
 
+    <% if current_user %>
+
+
+      <%= form_for [@project, @pledge] do |f| %>
+
+        <%= f.radio_button(:amount, 25) %>
+        <%= f.label(:amount, '25') %>
+        <%=f.hidden_field :user_id, :value => current_user.id%>
+
+        <%= f.radio_button(:amount, 50) %>
+        <%= f.label(:amount, '50') %>
+        <%=f.hidden_field :user_id, :value => current_user.id%>
+
+        <%= f.radio_button(:amount, 75) %>
+        <%= f.label(:amount, '75') %>
+        <%=f.hidden_field :user_id, :value => current_user.id%>
+
+        <%= f.radio_button(:amount, 100) %>
+        <%= f.label(:amount, '100') %>
+        <%=f.hidden_field :user_id, :value => current_user.id%>
+
+        <%= f.submit %>
+
+      <% end %>
+    
   <% end %>
