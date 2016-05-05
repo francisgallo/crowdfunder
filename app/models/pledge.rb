@@ -4,12 +4,12 @@ class Pledge < ActiveRecord::Base
   belongs_to :reward
 
 
-  count = 0
-
-def pledge_count
-  count += 1
-  puts count
-end
-
+#   count = 0
+#
+# def pledge_count
+#   count += 1
+#   puts count
+# end
+#
 
 end

@@ -1,5 +1,29 @@
 == README
 
+Day3:
+
+• See how many days are left on project
+  ○ Project show
+  ○ Apply this to project index
+
+• As a backer I want to see all the projects I have backed
+  ○ User profile page/show
+
+• As a backer I want to see the total money Ive spend on projects (total pledges)
+  ○ User profile page/show
+
+
+Reward Submission Ajax Request will
+• Update if the reward has been backed already or not
+• Update the total amount raised
+
+
+
+Find out what html is coming in that form
+
+
+
+
 Day 2:
 • Login associated with creating a project
 • Fix categories views
@@ -8,7 +32,7 @@ Day 2:
 • Add pledges
   ○ Associate reward & projects  
 
-Start Ajax to display rewards  (Monday's lecture) 
+Start Ajax to display rewards  (Monday's lecture)
 
 
 Day 1:
