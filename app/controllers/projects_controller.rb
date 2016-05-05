@@ -4,12 +4,19 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+
   end
 
   def show
     @project = Project.find(params[:id])
 
     @pledge = Pledge.new
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def new

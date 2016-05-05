@@ -1,9 +1,20 @@
-
 <h1> <%= @project.title %> </h1>
 
   <p> $ <%= @project.goal%> </p>
   <p> <%= @project.start_date %> </p>
   <p><%= @project.description %></p>
+
+
+<h2>Testing Pledge Count</h2>
+
+<div id="pledge-count">
+  <%= @project.pledges.count %>
+</div>
+
+
+
+
+
 
 
 <h2>Choose your reward for <%= @project.title %></h2>
@@ -18,12 +29,12 @@
       <% if current_user %>
 
 
-      <%= form_for [@project, @pledge] do |f| %>
+      <%= form_for [@project, @pledge], data: {project_id: @project.id} do |f| %>
 
         <%= f.hidden_field :amount, :value => reward.amount %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :reward_id, :value => reward.id %>
-        
+
         <%= f.submit %>
 
       <% end %>
