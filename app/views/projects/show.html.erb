@@ -1,2 +1,39 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+
+<h1> <%= @project.title %> </h1>
+
+  <p> $ <%= @project.goal%> </p>
+  <p> <%= @project.start_date %> </p>
+  <p><%= @project.description %></p>
+
+
+<h2>Choose your reward for <%= @project.title %></h2>
+
+   <% @project.rewards.each do |reward| %>
+     <p>
+       <%= reward.amount %>
+     <br>
+       <%= reward.description %>
+     </p>
+   <% end %>
+
+  <% if current_user %>
+
+    <%= form_for [@project, @pledge] do |f| %>
+
+      <%= f.radio_button(:amount, 25) %>
+      <%= f.label(:amount, '25') %>
+
+      <%= f.radio_button(:amount, 50) %>
+      <%= f.label(:amount, '50') %>
+
+      <%= f.radio_button(:amount, 75) %>
+      <%= f.label(:amount, '75') %>
+
+      <%= f.radio_button(:amount, 100) %>
+      <%= f.label(:amount, '100') %>
+
+      <%= f.submit %>
+
+    <% end %>
+
+  <% end %>

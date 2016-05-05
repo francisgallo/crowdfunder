@@ -1,11 +1,15 @@
 class ProjectsController < ApplicationController
 
+  skip_before_action :require_login, only: [:index, :show]
+
   def index
     @projects = Project.all
   end
 
   def show
     @project = Project.find(params[:id])
+
+    @pledge = Pledge.new
   end
 
   def new
@@ -13,14 +17,17 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @user = User.find(session[:user_id])
 
-    if @project.save
-      redirect_to projects_path
-      # alert: "Project Created Yo"
-    else
-        render :new
-    end
+      @project = @user.owned_projects.build(project_params)
+
+      if @project.save
+        redirect_to projects_path
+        # alert: "Project Created Yo"
+      else
+          render :new
+      end
+
   end
 
   def edit

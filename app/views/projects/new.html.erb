@@ -9,7 +9,7 @@
 
   <div class ="field">
     <%=f.label :categories %>
-    <%=f.select :category_id, [['Arts' ,1], ['Crafts',2  ], ['Design',3],['Fashion',4], ['Food',5 ], ['Games',6], ['Music',7], ['photography',8], ['technology',9]]  %>
+    <%=f.select :category_id, [['Arts' ,1], ['Crafts',2  ], ['Design',3],['Fashion',4], ['Food',5 ], ['Games',6], ['Music',7], ['Photography',8], ['Technology',9]]  %>
   </div>
 
   <div class="field">
@@ -44,7 +44,7 @@
 
     <h2>Rewards</h2>
 
-<%= f.fields_for :rewards,  [Reward.new, Reward.new, Reward.new, Reward.new ] do |reward_fields| %>
+    <%= f.fields_for :rewards,  [Reward.new, Reward.new, Reward.new, Reward.new ] do |reward_fields| %>
       <div class="field">
         <%= reward_fields.label :amount %>
         <%= reward_fields.select :amount,[['25' ,25],['50',50],['75',75],['100',100]] %>
@@ -58,7 +58,7 @@
     <div class="field">
       <%= f.submit %>
     </div>
-  <% end %>
+<% end %>
 
 <!-- form for a new project  -->
 <!-- f.submit, redirect_to rewards/new.html.erb -->

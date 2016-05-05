@@ -1,10 +1,10 @@
 <h1>Projects#index</h1>
 
 
-<%= @projects.each do |project| %>
+<% @projects.each do |project| %>
 
 <p>
-<a href="<%=project.id%>">
+<a href="projects/<%=project.id%>">
   <%=project.title %>, <%= project.goal%>, <%= project.start_date %>
 </a>
 
