@@ -1,5 +1,8 @@
 == README
 
+When creating pledges the first pledge amout  is set to the last reward created
+
+
 Day3:
 
 • See how many days are left on project

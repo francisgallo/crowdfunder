@@ -2,10 +2,7 @@ class PledgesController < ApplicationController
   def index
     @pledges = Pledge.all
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
+
   end
 
   def create
@@ -15,13 +12,16 @@ class PledgesController < ApplicationController
     @pledge = @project.pledges.build(pledge_params)
 
     #we want the instance of the project's id to be set on the pledge
-    #
-
-
-    if @pledge.save
-      # redirect_to projects_path
-    else
-      render 'project/show'
+    respond_to do |format|
+      format.json do
+        if @pledge.save
+          render (json: {
+            count: @project.pledges.count
+          })
+        else
+          render json: nil, status: 422
+        end
+      end
     end
 
   end

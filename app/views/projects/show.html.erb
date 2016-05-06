@@ -8,7 +8,7 @@
 <h2>Testing Pledge Count</h2>
 
 <div id="pledge-count">
-  <%= @project.pledges.count %>
+  <%= @project.pledge_count %>
 </div>
 
 <h2> Total pledged amount </h2>
@@ -38,7 +38,7 @@
       <% if current_user %>
 
 
-      <%= form_for [@project, @pledge], data: {project_id: @project.id} do |f| %>
+      <%= form_for [@project, @pledge] do |f| %>
 
         <%= f.hidden_field :amount, :value => reward.amount %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
