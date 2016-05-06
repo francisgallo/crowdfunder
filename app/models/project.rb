@@ -11,6 +11,6 @@ class Project < ActiveRecord::Base
   end
 
   def days_left
-  return  (self.end_date.to_date - self.start_date.to_date).round 
+  return  (self.end_date.to_date - Time.now.to_date).round 
   end
 end
