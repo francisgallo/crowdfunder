@@ -10,5 +10,7 @@ class Project < ActiveRecord::Base
     return self.pledges.sum(:amount)
   end
 
-
+  def days_left
+  return  (self.end_date.to_date - self.start_date.to_date).round 
+  end
 end

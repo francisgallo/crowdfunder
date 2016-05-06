@@ -3,7 +3,7 @@
 Day3:
 
 • See how many days are left on project
-  ○ Project show
+  ○ Project show-finished
   ○ Apply this to project index
 
 • As a backer I want to see all the projects I have backed
@@ -27,7 +27,6 @@ Find out what html is coming in that form
 Day 2:
 • Login associated with creating a project
 • Fix categories views
-• Fix index page hash
 
 • Add pledges
   ○ Associate reward & projects  
