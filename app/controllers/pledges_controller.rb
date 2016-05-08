@@ -1,8 +1,6 @@
 class PledgesController < ApplicationController
   def index
     @pledges = Pledge.all
-
-
   end
 
   def create
@@ -15,9 +13,10 @@ class PledgesController < ApplicationController
     respond_to do |format|
       format.json do
         if @pledge.save
-          render (json: {
-            count: @project.pledges.count
-          })
+          render json: {
+            count: @project.pledges.length,
+            amount: @project.pledges.sum(:amount)
+          }
         else
           render json: nil, status: 422
         end

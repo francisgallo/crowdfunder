@@ -11,10 +11,10 @@ class Project < ActiveRecord::Base
   end
 
   def pledge_count
-      return self.pledges.length 
+    return self.pledges.length
   end
 
   def days_left
-  return  (self.end_date.to_date - Time.now.to_date).round
+    return (self.end_date.to_date - Time.now.to_date).round
   end
 end

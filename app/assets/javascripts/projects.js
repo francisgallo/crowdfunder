@@ -8,20 +8,15 @@ $(document).on('ready page:load', function() {
 
     var pledge_url = $('form').attr('action');
 
-    // var increment_pledge = function(){
-    //   var count = $('#pledge-count').html();
-    //   var count_integer = parseInt(count);
-    //   ++count_integer
-    // }
-    // var successCount = 0;
-
      $.ajax({
            type: 'post',
            url: pledge_url,
            dataType: 'json',
            data: pledge
-         }).success(function(json) {
-           $('#pledge-count').html(json.count)
+         }).success(function(json){
+           alert("im ajax");
+           $('#pledge-count').html(json.count);
+           $('#pledge-amount').html(json.amount);
          });
 
   });
