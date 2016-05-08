@@ -9,15 +9,15 @@ $(document).on('ready page:load', function() {
     var pledge_url = $('form').attr('action');
 
      $.ajax({
-           type: 'post',
-           url: pledge_url,
-           dataType: 'json',
-           data: pledge
-         }).success(function(json){
-           alert("im ajax");
-           $('#pledge-count').html(json.count);
-           $('#pledge-amount').html(json.amount);
-         });
+        type: 'post',
+        url: pledge_url,
+        dataType: 'json',
+        data: pledge
+        }).success(function(json){
+          alert("im ajax");
+          $('#pledge-count').html(json.count);
+          $('#pledge-amount').html(json.amount);
+        });
 
   });
 });

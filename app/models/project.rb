@@ -17,4 +17,20 @@ class Project < ActiveRecord::Base
   def days_left
     return (self.end_date.to_date - Time.now.to_date).round
   end
+
+  # def have_you_pledged
+  #   self.pledges.each do |pledge|
+  #     if (pledge.user_id == current_user.id)
+  #       return true
+  #     else
+  #       return false
+  #     end
+  #   end
+  # end
+  #
+  # def have_you_pledged
+  #   return self.pledges.where(user_id == current_user.id)
+  # end
+
+
 end
