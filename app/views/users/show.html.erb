@@ -2,5 +2,14 @@
 
 <p><%= @user.email %></p>
 
+<% @user.projects.each do |project| %>
+
+<p>
+  <%= project.title%>
+<br>
+  <%= project.description %>
+</p>
+<%end %>
+
 
 <h2> You have made <%= @user.pledges.count %> pledges. Good Job! </h2>
