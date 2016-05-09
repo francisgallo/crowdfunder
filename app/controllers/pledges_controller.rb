@@ -9,13 +9,19 @@ class PledgesController < ApplicationController
     @pledge_user= current_user
     @pledge = @project.pledges.build(pledge_params)
 
-    #we want the instance of the project's id to be set on the pledge
+      # if @pledge.save
+      #   redirect_to projects_path
+      # else
+      #   render new
+      # end
+
+    
     respond_to do |format|
       format.json do
         if @pledge.save
           render json: {
             count: @project.pledges.length,
-            amount: @project.pledges.sum(:amount)
+            amount: @project.pledges.sum(:amount),
           }
         else
           render json: nil, status: 422

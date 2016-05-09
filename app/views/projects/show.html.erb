@@ -8,8 +8,13 @@
     <div id="have-you-pledged">
      <% if current_user.projects.include?(@project)%>
      you have pledged!
+       <% end %>
+     <% if current_user.pledges.include?(@project[:id])%>
+    You've pledged
    <% end %>
     </div>
+
+  <%=@project.total_goal%>   -->
 
 <h2>Testing Pledge Count</h2>
   <div id="pledge-count">

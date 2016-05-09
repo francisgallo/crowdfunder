@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
-  resources :users, only: [:show, :new, :create, :edit]
+  resources :users, only: [:show, :new, :create]
 
   resources :sessions, only: [:new, :create, :destroy]
 

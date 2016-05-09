@@ -12,8 +12,9 @@
   <div id="nav">
     <% if current_user %>
       Hello <%= current_user.name %>! Make it Rain!
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
+      <%= link_to "Show Profile", user_path(current_user) %>
       <%= link_to "Logout", :logout, method: :post %>
+      <%= link_to  "new project",  new_project_path %>
     <% else %>
       <%= link_to "Register", new_user_path %> |
       <%= link_to "Login", :login %>

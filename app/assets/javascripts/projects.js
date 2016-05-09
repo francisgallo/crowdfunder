@@ -5,7 +5,7 @@ $(document).on('ready page:load', function() {
     console.log('im javascript');
 
     var pledge = $('form').serialize();
-
+  //
     var pledge_url = $('form').attr('action');
 
      $.ajax({

@@ -6,6 +6,10 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards,  reject_if:  :all_blank
 
+  validates :title, :description, :goal , :location, :end_date, :start_date, presence: true
+  validate :correct_date
+  validate :endDatelaterthenStartDate
+
   def total_pledges
     return self.pledges.sum(:amount)
   end
@@ -17,20 +21,24 @@ class Project < ActiveRecord::Base
   def days_left
     return (self.end_date.to_date - Time.now.to_date).round
   end
-  # def have_you_pledged
-  #   self.pledges.each do |pledge|
-  #     if (pledge.user_id == current_user.id)
-  #       return true
-  #     else
-  #       return false
-  #     end
-  #   end
-  # end
-  #
 
-  def have_you_pledged
-    return self.user.pledges.where()
+  def total_goal
+    if self.total_pledges > self.goal
+      return "you have reached your goal"
+    else
+    end
   end
 
+  def correct_date
+      if self.start_date < Time.now.to_date
+        errors.add(:start_date, "Start date has to be a later date")
+      end
+  end
+
+  def endDatelaterthenStartDate
+    if self.end_date <= self.start_date
+      errors.add(:end_date," has to be later then  Start date ")
+    end
+  end
 
 end

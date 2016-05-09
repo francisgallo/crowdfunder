@@ -4,4 +4,5 @@ class Reward < ActiveRecord::Base
   has_many :pledges
   has_many :users, through: :pledges
 
+  validates  :amount, :description ,   presence: true
 end
