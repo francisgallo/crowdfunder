@@ -1,12 +1,13 @@
 $(document).on('ready page:load', function() {
   $('.new_pledge').on('submit', function(event){
     event.preventDefault();
+    event.stopPropagation();
 
     console.log('im javascript');
 
-    var pledge = $('form').serialize();
+    var pledge = $(this).serialize();
   //
-    var pledge_url = $('form').attr('action');
+    var pledge_url = $(this).attr('action');
 
      $.ajax({
         type: 'post',
