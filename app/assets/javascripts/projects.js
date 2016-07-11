@@ -1,7 +1,7 @@
 $(document).on('ready page:load', function() {
   $('.new_pledge').on('submit', function(event){
     event.preventDefault();
-    event.stopPropagation();
+    // event.stopPropagation();
 
     console.log('im javascript');
 

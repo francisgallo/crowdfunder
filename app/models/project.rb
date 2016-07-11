@@ -10,6 +10,10 @@ class Project < ActiveRecord::Base
   validate :correct_date
   validate :endDatelaterthenStartDate
 
+
+  mount_uploader :avatar, AvatarUploader
+
+
   def total_pledges
     return self.pledges.sum(:amount)
   end

@@ -15,7 +15,7 @@ class PledgesController < ApplicationController
       #   render new
       # end
 
-    
+
     respond_to do |format|
       format.json do
         if @pledge.save

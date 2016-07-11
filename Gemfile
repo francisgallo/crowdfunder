@@ -28,6 +28,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'sorcery'
 
+gem 'carrierwave'
+
+gem "mini_magick"
+
+gem 'carrierwave-imageoptimizer'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
