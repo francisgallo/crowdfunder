@@ -1,6 +1,11 @@
-<h1>Projects#index</h1>
 
+<div class = "row">
+<div class ="col-xs-12">
+<h1 class ="main-title">CrowdFunder</h1>
+</div>
+</div>
 
+<div class = "col-xs-9">
 <% @projects.each do |project| %>
 
 <p>
@@ -13,5 +18,5 @@
 <p>
   <%= image_tag project.avatar.card %>
 </p>
-
+</div>
 <% end %>
